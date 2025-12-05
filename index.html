@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <!-- Google Analytics (replace G-XXXXXXXXXX with your GA4 ID) -->
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your real ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
 </head>
 
 <body>
-    <!-- HEADER (same on all pages, but Home link has class="active") -->
+    <!-- HEADER -->
     <header>
         <div class="logo-wrap">
             <img src="logo.png" class="logo" alt="AI Market logo" />
@@ -56,18 +56,20 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to <span>AI Market</span></h1>
-            <p id="hero-tagline"
-               data-en="The World’s Smart AI Platform — Create • Earn • Donate"
-               data-te="ప్రపంచంలో స్మార్ట్ AI ప్లాట్‌ఫార్మ్ — Create • Earn • Donate"
-               data-ta="உலகின் ஸ்மார்ட் AI தளம் — Create • Earn • Donate">
+            <h1 data-i18n="home_title">
+                Welcome to <span>AI Market</span>
+            </h1>
+
+            <p data-i18n="home_tagline">
                 The World’s Smart AI Platform — <b>Create</b> • <b>Earn</b> • <b>Donate</b>
             </p>
 
-            <a href="ai-tools.html" class="btn-primary">Start Creating</a>
+            <a href="ai-tools.html" class="btn-primary" data-i18n="btn_start">
+                Start Creating
+            </a>
             <br /><br />
             <a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20want%20to%20order%20an%20AI%20video."
-               class="btn-secondary" target="_blank">
+               class="btn-secondary" target="_blank" data-i18n="btn_order_whatsapp">
                 Order on WhatsApp
             </a>
         </div>
@@ -75,27 +77,37 @@
 
     <!-- FEATURES -->
     <section class="features">
-        <h2 class="section-title">What You Can Do With AI Market</h2>
+        <h2 class="section-title" data-i18n="features_title">
+            What You Can Do With AI Market
+        </h2>
 
         <div class="features-container">
             <div class="card">
-                <h3>AI Video Tools</h3>
-                <p>Reels & Shorts, Devotional & Status videos, Cartoon videos and more for your social media.</p>
+                <h3 data-i18n="f_video_title">AI Video Tools</h3>
+                <p data-i18n="f_video_desc">
+                    Reels & Shorts, Devotional & Status videos, Cartoon videos and more for your social media.
+                </p>
             </div>
 
             <div class="card">
-                <h3>AI Image Tools</h3>
-                <p>Cartoon photos, portrait enhancement and background removal for professional visuals.</p>
+                <h3 data-i18n="f_image_title">AI Image Tools</h3>
+                <p data-i18n="f_image_desc">
+                    Cartoon photos, portrait enhancement and background removal for professional visuals.
+                </p>
             </div>
 
             <div class="card">
-                <h3>AI Audio & Music Tools</h3>
-                <p>BGM creation, vocal enhancement and AI-based music generation for your content.</p>
+                <h3 data-i18n="f_audio_title">AI Audio & Music Tools</h3>
+                <p data-i18n="f_audio_desc">
+                    BGM creation, vocal enhancement and AI-based music generation for your content.
+                </p>
             </div>
 
             <div class="card">
-                <h3>AI Text & Script Tools</h3>
-                <p>Captions, subtitles, scripts and ad copy – coming soon to automate your content ideas.</p>
+                <h3 data-i18n="f_text_title">AI Text & Script Tools</h3>
+                <p data-i18n="f_text_desc">
+                    Captions, subtitles, scripts and ad copy – coming soon to automate your content ideas.
+                </p>
             </div>
         </div>
     </section>
@@ -117,8 +129,9 @@
         <a href="cookies.html">Cookies</a>
     </footer>
 
-    <!-- THEME + LANGUAGE SCRIPT (include on all pages, ideally at bottom) -->
+    <!-- THEME + LANGUAGE SCRIPT -->
     <script>
+      // Dark / Light theme toggle
       (function () {
         const body = document.body;
         const toggle = document.getElementById('themeToggle');
@@ -138,18 +151,77 @@
         });
       })();
 
+      // Simple translation for HOME page (EN / TE / TA)
       (function () {
+        const translations = {
+          en: {
+            home_title: 'Welcome to <span>AI Market</span>',
+            home_tagline: 'The World’s Smart AI Platform — <b>Create</b> • <b>Earn</b> • <b>Donate</b>',
+            btn_start: 'Start Creating',
+            btn_order_whatsapp: 'Order on WhatsApp',
+            features_title: 'What You Can Do With AI Market',
+            f_video_title: 'AI Video Tools',
+            f_video_desc: 'Reels & Shorts, Devotional & Status videos, Cartoon videos and more for your social media.',
+            f_image_title: 'AI Image Tools',
+            f_image_desc: 'Cartoon photos, portrait enhancement and background removal for professional visuals.',
+            f_audio_title: 'AI Audio & Music Tools',
+            f_audio_desc: 'BGM creation, vocal enhancement and AI-based music generation for your content.',
+            f_text_title: 'AI Text & Script Tools',
+            f_text_desc: 'Captions, subtitles, scripts and ad copy – coming soon to automate your content ideas.'
+          },
+          te: {
+            home_title: 'స్వాగతం <span>AI Market</span> కి',
+            home_tagline: 'ప్రపంచంలో స్మార్ట్ AI ప్లాట్‌ఫారమ్ — <b>సృష్టించండి</b> • <b>సంపాదించండి</b> • <b>దానం చేయండి</b>',
+            btn_start: 'ప్రారంభించండి',
+            btn_order_whatsapp: 'వాట్సాప్‌లో ఆర్డర్ చేయండి',
+            features_title: 'AI Market తో మీరు ఏమి చేయగలరు',
+            f_video_title: 'AI వీడియో టూల్స్',
+            f_video_desc: 'రిల్స్ & షార్ట్స్, భక్తి / స్టేటస్ వీడియోలు, కార్టూన్ వీడియోలు మరియు మరెన్నో.',
+            f_image_title: 'AI ఇమేజ్ టూల్స్',
+            f_image_desc: 'కార్టూన్ ఫోటోలు, పోర్ట్రైట్ ఎన్‌హాన్స్‌మెంట్, బ్యాక్‌గ్రౌండ్ రిమూవ్ & చేంజ్.',
+            f_audio_title: 'AI ఆడియో & మ్యూజిక్ టూల్స్',
+            f_audio_desc: 'BGM తయారీ, వాయిస్ క్లీనప్, AI మ్యూజిక్ జనరేషన్.',
+            f_text_title: 'AI టెక్ట్స్ & స్క్రిప్ట్ టూల్స్',
+            f_text_desc: 'కాప్షన్లు, సబ్‌టైటిల్స్, స్క్రిప్ట్స్ – త్వరలో అందుబాటులోకి వస్తాయి.'
+          },
+          ta: {
+            home_title: '<span>AI Market</span> க்கு வரவேற்கிறோம்',
+            home_tagline: 'உலகின் ஸ்மார்ட் AI தளம் — <b>உருவாக்கு</b> • <b>சம்பாதி</b> • <b>நன்கொடை</b>',
+            btn_start: 'தொடங்குங்கள்',
+            btn_order_whatsapp: 'WhatsApp-ல் ஆர்டர் செய்யவும்',
+            features_title: 'AI Market மூலம் நீங்கள் என்ன செய்யலாம்',
+            f_video_title: 'AI வீடியோ கருவிகள்',
+            f_video_desc: 'ரீல்ஸ், ஷார்ட்ஸ், பக்தி / ஸ்டேட்டஸ் வீடியோக்கள், கார்ட்டூன் வீடியோக்கள் போன்றவை.',
+            f_image_title: 'AI புகைப்பட கருவிகள்',
+            f_image_desc: 'கார்ட்டூன் போட்டோ, முகத்தை அழகாக்கல், பின்னணி மாற்றல் / அகற்றல்.',
+            f_audio_title: 'AI ஆடியோ & இசை கருவிகள்',
+            f_audio_desc: 'BGM உருவாக்கம், குரல் எண்ஹான்சர், AI இசை ஜெனரேட்டர்.',
+            f_text_title: 'AI எழுத்து & ஸ்கிரிப்ட் கருவிகள்',
+            f_text_desc: 'கேப்ஷன், சப்டைட்டில், ஸ்கிரிப்ட் – விரைவில் வருகிறது.'
+          }
+        };
+
         const buttons = document.querySelectorAll('.lang-btn');
-        const tagline = document.getElementById('hero-tagline');
-        if (!buttons.length || !tagline) return;
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        if (!buttons.length || !elements.length) return;
 
         const savedLang = localStorage.getItem('aimarket-lang') || 'en';
 
         function applyLang(lang) {
-          const text = tagline.dataset[lang] || tagline.dataset.en;
-          tagline.textContent = text;
-          buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-          document.documentElement.lang = lang === 'te' ? 'te' : (lang === 'ta' ? 'ta' : 'en');
+          const dict = translations[lang] || translations.en;
+
+          elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (!key || !dict[key]) return;
+            el.innerHTML = dict[key]; // allow HTML, e.g. <span>, <b>
+          });
+
+          buttons.forEach(btn =>
+            btn.classList.toggle('active', btn.dataset.lang === lang)
+          );
+
+          document.documentElement.lang = (lang === 'te' || lang === 'ta') ? lang : 'en';
           localStorage.setItem('aimarket-lang', lang);
         }
 
@@ -160,6 +232,5 @@
         applyLang(savedLang);
       })();
     </script>
-
 </body>
 </html>
