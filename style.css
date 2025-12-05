@@ -27,12 +27,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 32px;
+    padding: 12px 20px;
     background: rgba(5, 8, 20, 0.97);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 20;
 }
 
 .logo-wrap {
@@ -42,7 +42,7 @@ header {
 }
 
 .logo {
-    height: 42px;
+    height: 40px;
     border-radius: 8px;
 }
 
@@ -62,12 +62,21 @@ header {
     opacity: 0.7;
 }
 
-/* NAVIGATION */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
 nav a {
-    margin-left: 16px;
+    margin-left: 14px;
     font-size: 0.95rem;
     color: #c9d4ff;
     font-weight: 500;
+}
+
+nav a:first-child {
+    margin-left: 0;
 }
 
 nav a:hover {
@@ -78,6 +87,46 @@ nav a.active {
     color: #ffffff;
     border-bottom: 2px solid #5ab8ff;
     padding-bottom: 3px;
+}
+
+/* Header Actions (Lang + Theme) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lang-switch {
+    display: inline-flex;
+    background: #0b1020;
+    border-radius: 999px;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+    color: #c9d4ff;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.lang-btn.active {
+    background: #5ab8ff;
+    color: #000;
+}
+
+.theme-toggle {
+    border: none;
+    background: #0b1020;
+    color: #f4f7ff;
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
 }
 
 /* ========== HERO SECTION ========== */
@@ -437,13 +486,87 @@ footer a:hover {
     color: #ffffff;
 }
 
+/* ========== WHATSAPP FLOAT BUTTON ========== */
+.whatsapp-float {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    z-index: 30;
+}
+
+/* ========== DARK / LIGHT THEME OVERRIDES ========== */
+body.light-theme {
+    background: #f4f6ff;
+    color: #111;
+}
+
+body.light-theme header {
+    background: #ffffff;
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .hero {
+    background: radial-gradient(circle at top, #e5f0ff 0, #f4f6ff 55%);
+}
+
+body.light-theme .card,
+body.light-theme .tool-card,
+body.light-theme .price-card,
+body.light-theme .donate-card,
+body.light-theme .contact-box {
+    background: #ffffff;
+    color: #111;
+    border-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .card p,
+body.light-theme .tool-card p,
+body.light-theme .price-card li,
+body.light-theme .price-note,
+body.light-theme .donate-card p,
+body.light-theme .contact-box p,
+body.light-theme .legal-page p,
+body.light-theme .legal-page li {
+    color: #333c4d;
+}
+
+body.light-theme footer {
+    border-top-color: rgba(0, 0, 0, 0.08);
+}
+
 /* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     header {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-        padding: 10px 16px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    nav {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 14px;
     }
 
     nav {
@@ -452,7 +575,7 @@ footer a:hover {
     }
 
     nav a {
-        margin: 4px 12px 0 0;
+        margin: 4px 10px 0 0;
     }
 
     .hero {
