@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pricing - AI Market</title>
-    <link rel="stylesheet" href="style.css" />
 
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.png" />
+
+    <!-- Google Analytics (optional) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      function gtag(){ dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
     </script>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo-wrap">
         <img src="logo.png" class="logo" alt="AI Market logo" />
@@ -24,6 +29,7 @@
             <span class="tagline">World’s Smart AI Platform</span>
         </div>
     </div>
+
     <div class="header-right">
         <nav>
             <a href="index.html">Home</a>
@@ -33,78 +39,86 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
+
         <div class="header-actions">
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="te">TE</button>
-                <button class="lang-btn" data-lang="ta">TA</button>
-            </div>
             <button class="theme-toggle" id="themeToggle">🌙</button>
         </div>
     </div>
 </header>
 
-<section class="page pricing-section">
-    <h1 class="section-title" data-i18n="price_title">Pricing Plans</h1>
-    <p class="section-subtitle" data-i18n="price_subtitle">
-        Choose a plan that fits your content needs. Pay securely via Razorpay.
+<!-- PRICING PAGE -->
+<section class="page">
+    <h1 class="section-title">Pricing Plans</h1>
+    <p class="section-subtitle">
+        Choose a plan that matches your content needs.  
+        All payments are securely processed via Razorpay.
     </p>
 
     <div class="price-grid">
+
+        <!-- STARTER -->
         <div class="price-card">
-            <h2 data-i18n="starter_title">Starter</h2>
+            <span class="badge">Starter</span>
+            <h2>Basic Reel</h2>
             <div class="price-amount">₹99</div>
-            <div class="price-note" data-i18n="starter_note">
-                Perfect for 1 basic reel or short video.
-            </div>
+            <p>Perfect for 1 simple reel or short status video.</p>
+
             <ul>
-                <li data-i18n="starter_li1">Up to 15 seconds</li>
-                <li data-i18n="starter_li2">1 song or audio</li>
-                <li data-i18n="starter_li3">Simple transitions & effects</li>
+                <li>Up to 15 seconds</li>
+                <li>1 audio/song</li>
+                <li>Basic transitions & effects</li>
             </ul>
-            <a href="https://rzp.io/rzp/MoQmtvPr" class="btn-primary" target="_blank" data-i18n="btn_pay_99">
+
+            <a href="https://rzp.io/rzp/MoQmtvPr" class="btn-primary" target="_blank">
                 Pay ₹99
             </a>
         </div>
 
-        <div class="price-card popular">
-            <span class="badge" data-i18n="badge_popular">Most Popular</span>
-            <h2 data-i18n="pro_title">Pro</h2>
+        <!-- PRO -->
+        <div class="price-card">
+            <span class="badge">Most Popular</span>
+            <h2>Pro Creator</h2>
             <div class="price-amount">₹299</div>
-            <div class="price-note" data-i18n="pro_note">
-                Best for creators & small businesses.
-            </div>
+            <p>Ideal for regular content creators & small businesses.</p>
+
             <ul>
-                <li data-i18n="pro_li1">Up to 30 seconds</li>
-                <li data-i18n="pro_li2">Advanced effects & text</li>
-                <li data-i18n="pro_li3">1 free revision</li>
+                <li>Up to 30 seconds</li>
+                <li>Advanced effects & motion</li>
+                <li>Custom text & branding</li>
+                <li>1 free revision</li>
             </ul>
-            <a href="https://rzp.io/rzp/mMXyAH0p" class="btn-primary" target="_blank" data-i18n="btn_pay_299">
+
+            <a href="https://rzp.io/rzp/mMXyAH0p" class="btn-primary" target="_blank">
                 Pay ₹299
             </a>
         </div>
 
+        <!-- PREMIUM -->
         <div class="price-card">
-            <h2 data-i18n="premium_title">Premium</h2>
+            <span class="badge">Premium</span>
+            <h2>Brand Package</h2>
             <div class="price-amount">₹999</div>
-            <div class="price-note" data-i18n="premium_note">
-                For heavy users, brands & agencies.
-            </div>
+            <p>For brands, agencies and heavy usage.</p>
+
             <ul>
-                <li data-i18n="premium_li1">Up to 60 seconds</li>
-                <li data-i18n="premium_li2">Multiple scenes & variations</li>
-                <li data-i18n="premium_li3">Priority delivery</li>
+                <li>Up to 60 seconds</li>
+                <li>Multiple scenes & variations</li>
+                <li>Priority delivery</li>
+                <li>Advanced customization</li>
             </ul>
-            <a href="https://rzp.io/rzp/67BhfxGW" class="btn-primary" target="_blank" data-i18n="btn_pay_999">
+
+            <a href="https://rzp.io/rzp/67BhfxGW" class="btn-primary" target="_blank">
                 Pay ₹999
             </a>
         </div>
     </div>
 </section>
 
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20have%20a%20question%20about%20pricing."
-   class="whatsapp-float" target="_blank" aria-label="WhatsApp Support">💬</a>
+   class="whatsapp-float" target="_blank">💬</a>
 
+<!-- FOOTER -->
 <footer>
     © 2025 AI Market · World’s Smart AI Platform
     <br />
@@ -115,141 +129,25 @@
     <a href="cookies.html">Cookies</a>
 </footer>
 
+<!-- THEME SCRIPT -->
 <script>
-  // Theme
-  (function () {
+(function () {
     const body = document.body;
-    const toggle = document.getElementById('themeToggle');
-    if (!toggle) return;
-    const savedTheme = localStorage.getItem('aimarket-theme');
-    if (savedTheme === 'light') {
-      body.classList.add('light-theme');
-      toggle.textContent = '☀';
-    }
-    toggle.addEventListener('click', function () {
-      body.classList.toggle('light-theme');
-      const isLight = body.classList.contains('light-theme');
-      toggle.textContent = isLight ? '☀' : '🌙';
-      localStorage.setItem('aimarket-theme', isLight ? 'light' : 'dark');
-    });
-  })();
+    const toggle = document.getElementById("themeToggle");
 
-  // Translations for Pricing page
-  (function () {
-    const translations = {
-      en: {
-        price_title: 'Pricing Plans',
-        price_subtitle: 'Choose a plan that fits your content needs. Pay securely via Razorpay.',
-
-        starter_title: 'Starter',
-        starter_note: 'Perfect for 1 basic reel or short video.',
-        starter_li1: 'Up to 15 seconds',
-        starter_li2: '1 song or audio',
-        starter_li3: 'Simple transitions & effects',
-
-        pro_title: 'Pro',
-        pro_note: 'Best for creators & small businesses.',
-        pro_li1: 'Up to 30 seconds',
-        pro_li2: 'Advanced effects & text',
-        pro_li3: '1 free revision',
-
-        premium_title: 'Premium',
-        premium_note: 'For heavy users, brands & agencies.',
-        premium_li1: 'Up to 60 seconds',
-        premium_li2: 'Multiple scenes & variations',
-        premium_li3: 'Priority delivery',
-
-        badge_popular: 'Most Popular',
-        btn_pay_99: 'Pay ₹99',
-        btn_pay_299: 'Pay ₹299',
-        btn_pay_999: 'Pay ₹999'
-      },
-      te: {
-        price_title: 'ప్రైసింగ్ ప్లాన్స్',
-        price_subtitle: 'మీ కంటెంట్‌కి సరిపోయే ప్లాన్‌ను ఎంచుకోండి. చెల్లింపు Razorpay ద్వారా సేఫ్ & సెక్యూర్.',
-
-        starter_title: 'స్టార్టర్',
-        starter_note: 'ఒక బేసిక్ రీల్ లేదా షార్ట్ వీడియో కోసం సరైన ప్లాన్.',
-        starter_li1: 'గరిష్టం 15 సెకన్లు',
-        starter_li2: '1 పాట లేదా ఆడియో',
-        starter_li3: 'సింపుల్ ట్రాన్సిషన్స్ & ఎఫెక్ట్స్',
-
-        pro_title: 'ప్రో',
-        pro_note: 'క్రియేటర్స్ & చిన్న బిజినెస్ కోసం బెస్ట్.',
-        pro_li1: 'గరిష్టం 30 సెకన్లు',
-        pro_li2: 'అడ్వాన్స్‌డ్ ఎఫెక్ట్స్ & టెక్ట్స్',
-        pro_li3: '1 ఫ్రీ రివిజన్',
-
-        premium_title: 'ప్రీమియం',
-        premium_note: 'బ్రాండ్స్, ఏజెన్సీలు & హెవి యూజర్స్ కోసం.',
-        premium_li1: 'గరిష్టం 60 సెకన్లు',
-        premium_li2: 'మల్టిపుల్ సీన్స్ & వెరీయేషన్స్',
-        premium_li3: 'ప్రాధాన్య డెలివరీ',
-
-        badge_popular: 'బెస్ట్ సెల్లర్',
-        btn_pay_99: '₹99 చెల్లించండి',
-        btn_pay_299: '₹299 చెల్లించండి',
-        btn_pay_999: '₹999 చెల్లించండి'
-      },
-      ta: {
-        price_title: 'பிரைசிங் திட்டங்கள்',
-        price_subtitle: 'உங்கள் கான்டெண்ட் தேவைக்கு பொருந்தும் திட்டத்தை தேர்வு செய்யுங்கள். பணம் Razorpay மூலம் பாதுகாப்பாக செலுத்தலாம்.',
-
-        starter_title: 'ஸ்டார்டர்',
-        starter_note: '1 சிம்பிள் ரீல் அல்லது ஷார்ட் வீடியோவுக்கு ஏற்ற திட்டம்.',
-        starter_li1: 'அதிகபட்சம் 15 விநாடிகள்',
-        starter_li2: '1 பாடல் அல்லது ஆடியோ',
-        starter_li3: 'சிம்பிள் டிரான்ஸிஷன் & எஃபெக்ட்ஸ்',
-
-        pro_title: 'ப்ரோ',
-        pro_note: 'கிரியேட்டர்கள் மற்றும் சின்ன வியாபாரங்களுக்கு சிறந்தது.',
-        pro_li1: 'அதிகபட்சம் 30 விநாடிகள்',
-        pro_li2: 'அட்வான்ஸ்ட் எஃபெக்ட்ஸ் & டெக்ஸ்ட்',
-        pro_li3: '1 இலவச திருத்தம்',
-
-        premium_title: 'பிரீமியம்',
-        premium_note: 'பிராண்டுகள், ஏஜென்சிகள் மற்றும் ஹெவி யூசர்களுக்கு.',
-        premium_li1: 'அதிகபட்சம் 60 விநாடிகள்',
-        premium_li2: 'பல காட்சிகள் & வேரியஷன்ஸ்',
-        premium_li3: 'முன்னுரிமை டெலிவரி',
-
-        badge_popular: 'அதிகம் தேர்ந்தெடுக்கப்பட்டது',
-        btn_pay_99: '₹99 செலுத்தவும்',
-        btn_pay_299: '₹299 செலுத்தவும்',
-        btn_pay_999: '₹999 செலுத்தவும்'
-      }
-    };
-
-    const buttons = document.querySelectorAll('.lang-btn');
-    const elements = document.querySelectorAll('[data-i18n]');
-
-    if (!buttons.length || !elements.length) return;
-
-    const savedLang = localStorage.getItem('aimarket-lang') || 'en';
-
-    function applyLang(lang) {
-      const dict = translations[lang] || translations.en;
-
-      elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (!key || !dict[key]) return;
-        el.innerHTML = dict[key];
-      });
-
-      buttons.forEach(btn =>
-        btn.classList.toggle('active', btn.dataset.lang === lang)
-      );
-
-      document.documentElement.lang = (lang === 'te' || lang === 'ta') ? lang : 'en';
-      localStorage.setItem('aimarket-lang', lang);
+    const saved = localStorage.getItem("theme");
+    if (saved === "light") {
+        body.classList.add("light-theme");
+        toggle.textContent = "☀";
     }
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light-theme");
+        const light = body.classList.contains("light-theme");
+        toggle.textContent = light ? "☀" : "🌙";
+        localStorage.setItem("theme", light ? "light" : "dark");
     });
-
-    applyLang(savedLang);
-  })();
+})();
 </script>
 
 </body>
