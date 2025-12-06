@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terms & Conditions - AI Market</title>
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.png" />
 </head>
+
 <body>
 
 <header>
     <div class="logo-wrap">
-        <img src="logo.png" class="logo" alt="AI Market logo" />
+        <img src="logo.png" class="logo">
         <div class="logo-text">
             <span class="site-name">AI Market</span>
             <span class="tagline">World’s Smart AI Platform</span>
         </div>
     </div>
+
     <div class="header-right">
         <nav>
             <a href="index.html">Home</a>
@@ -24,89 +28,66 @@
             <a href="donate.html">Donate</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+            <a class="active" href="terms.html">Terms</a>
         </nav>
-        <div class="header-actions">
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="te">TE</button>
-                <button class="lang-btn" data-lang="ta">TA</button>
-            </div>
-            <button class="theme-toggle" id="themeToggle">🌙</button>
-        </div>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
     </div>
 </header>
 
 <section class="page legal-page">
     <h1 class="section-title">Terms & Conditions</h1>
 
-    <p>Welcome to AI Market. By accessing this website or using our services, you agree to these Terms & Conditions.</p>
+    <div class="card">
 
-    <h2>1. Use of Services</h2>
-    <p>You may use AI Market only for lawful purposes. You must not misuse our AI tools or attempt to harm or disrupt the platform.</p>
+        <p>Welcome to AI Market. By using our website, services, and tools, you agree to the following terms and conditions.</p>
 
-    <h2>2. Payments</h2>
-    <p>All payments are processed securely via Razorpay. Once AI work has started, payments are generally non-refundable except as outlined in our Refund Policy.</p>
+        <h2>1. Use of Services</h2>
+        <p>You may use our AI tools for personal or business purposes. Illegal, harmful, or abusive use is strictly prohibited.</p>
 
-    <h2>3. Content Responsibility</h2>
-    <p>You are responsible for photos, music, text or any content you share. Do not upload illegal, copyrighted or harmful material.</p>
+        <h2>2. Payments</h2>
+        <p>All payments made through Razorpay or WhatsApp orders are final unless covered by the Refund Policy.</p>
 
-    <h2>4. Limitation of Liability</h2>
-    <p>AI Market will not be liable for any loss of data, profits or damages arising from use of our services.</p>
+        <h2>3. Content Ownership</h2>
+        <p>
+            You own the content you upload. AI Market is not responsible for copyrighted material uploaded by users.
+        </p>
 
-    <h2>5. Changes to Terms</h2>
-    <p>We may update these terms at any time. Continued use of AI Market after changes means you accept the updated terms.</p>
+        <h2>4. Service Availability</h2>
+        <p>
+            We may update, modify, or temporarily disable any tool or service without prior notice.
+        </p>
 
-    <p>Last updated: 2025</p>
+        <h2>5. Limitation of Liability</h2>
+        <p>
+            AI Market is not responsible for losses, damages, or delays caused by third-party services, payment gateways, or user misuse.
+        </p>
+
+        <h2>6. Updates to Terms</h2>
+        <p>These terms may be updated at any time. Continued use means you accept the updated terms.</p>
+
+    </div>
 </section>
 
-<a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20have%20a%20question%20about%20your%20Terms."
-   class="whatsapp-float" target="_blank" aria-label="WhatsApp Support">💬</a>
+<a href="https://wa.me/919676142165" class="whatsapp-float" target="_blank">💬</a>
 
 <footer>
     © 2025 AI Market · World’s Smart AI Platform
-    <br />
+    <br>
     <a href="terms.html">Terms</a> ·
     <a href="privacy.html">Privacy</a> ·
-    <a href="refund.html">Refund Policy</a> ·
+    <a href="refund.html">Refund</a> ·
     <a href="disclaimer.html">Disclaimer</a> ·
     <a href="cookies.html">Cookies</a>
 </footer>
 
 <script>
-  (function () {
-    const body = document.body;
-    const toggle = document.getElementById('themeToggle');
-    if (!toggle) return;
-    const savedTheme = localStorage.getItem('aimarket-theme');
-    if (savedTheme === 'light') {
-      body.classList.add('light-theme');
-      toggle.textContent = '☀';
-    }
-    toggle.addEventListener('click', function () {
-      body.classList.toggle('light-theme');
-      const isLight = body.classList.contains('light-theme');
-      toggle.textContent = isLight ? '☀' : '🌙';
-      localStorage.setItem('aimarket-theme', isLight ? 'light' : 'dark');
-    });
-  })();
-
-  (function () {
-    const buttons = document.querySelectorAll('.lang-btn');
-    const tagline = document.getElementById('hero-tagline');
-    const savedLang = localStorage.getItem('aimarket-lang') || 'en';
-    function applyLang(lang) {
-      if (tagline) {
-        const text = tagline.dataset[lang] || tagline.dataset.en;
-        tagline.textContent = text;
-      }
-      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-      document.documentElement.lang = (lang === 'te' || lang === 'ta') ? lang : 'en';
-      localStorage.setItem('aimarket-lang', lang);
-    }
-    buttons.forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
-    applyLang(savedLang);
-  })();
+(function(){
+    const body=document.body;
+    const t=document.getElementById("themeToggle");
+    const saved=localStorage.getItem("theme");
+    if(saved==="light"){body.classList.add("light-theme");t.textContent="☀";}
+    t.addEventListener("click",()=>{body.classList.toggle("light-theme");const L=body.classList.contains("light-theme");t.textContent=L?"☀":"🌙";localStorage.setItem("theme",L?"light":"dark");});
+})();
 </script>
-
 </body>
 </html>
