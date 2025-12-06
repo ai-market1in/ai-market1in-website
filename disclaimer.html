@@ -3,38 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclaimer | AI Market</title>
+    <title>Disclaimer - AI Market</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
 </head>
+
 <body>
 
-<header class="header">
-    <a href="index.html" class="logo">AI Market</a>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="ai-tools.html">AI Tools</a>
-        <a href="pricing.html">Pricing</a>
-        <a class="active" href="disclaimer.html">Disclaimer</a>
-    </nav>
+<header>
+    <div class="logo-wrap">
+        <img src="logo.png" class="logo">
+        <div class="logo-text">
+            <span class="site-name">AI Market</span>
+            <span class="tagline">World’s Smart AI Platform</span>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="ai-tools.html">AI Tools</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="donate.html">Donate</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a class="active" href="disclaimer.html">Disclaimer</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
 </header>
 
-<section class="legal">
-    <h1>Disclaimer</h1>
-    <p>AI Market provides AI tools for entertainment and creative use only.</p>
+<section class="page legal-page">
+    <h1 class="section-title">Disclaimer</h1>
 
-    <h2>1. No Professional Guarantee</h2>
-    <p>We do not guarantee accuracy, completeness, or suitability of AI-generated results.</p>
+    <div class="card">
+        <p>
+            All services provided by AI Market are generated using automated AI tools.
+            Results may vary depending on input quality and content type.
+        </p>
 
-    <h2>2. User Responsibility</h2>
-    <p>Users are responsible for how they use generated content.</p>
+        <h2>1. No Guarantee of Accuracy</h2>
+        <p>AI results may not always be perfect or match user expectations exactly.</p>
 
-    <h2>3. External Links</h2>
-    <p>We are not responsible for content on third-party links.</p>
+        <h2>2. User Responsibility</h2>
+        <p>You are responsible for ensuring you own the rights to uploaded content.</p>
+
+        <h2>3. Third-Party Links</h2>
+        <p>We are not responsible for third-party services, payment gateways, or external websites.</p>
+    </div>
 </section>
 
+<a href="https://wa.me/919676142165" class="whatsapp-float" target="_blank">💬</a>
+
 <footer>
-    <p>© 2025 AI Market | <a href="disclaimer.html">Disclaimer</a></p>
+    © 2025 AI Market · World’s Smart AI Platform <br>
+    <a href="terms.html">Terms</a> ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="refund.html">Refund</a> ·
+    <a href="disclaimer.html">Disclaimer</a> ·
+    <a href="cookies.html">Cookies</a>
 </footer>
+
+<script>
+(function(){
+    const body=document.body;
+    const t=document.getElementById("themeToggle");
+    const saved=localStorage.getItem("theme");
+    if(saved==="light"){body.classList.add("light-theme");t.textContent="☀";}
+    t.addEventListener("click",()=>{body.classList.toggle("light-theme");const L=body.classList.contains("light-theme");t.textContent=L?"☀":"🌙";localStorage.setItem("theme",L?"light":"dark");});
+})();
+</script>
 
 </body>
 </html>
