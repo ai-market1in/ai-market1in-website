@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Disclaimer - AI Market</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.png" />
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer - AI Market</title>
 
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4Z93Z4T');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" />
+</head>
 <body>
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4Z93Z4T"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
 <header>
   <div class="header-inner">
       <div class="logo-wrap">
@@ -20,7 +35,7 @@
       </div>
       <div class="header-right">
           <button class="theme-toggle" id="themeToggle">🌙</button>
-          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+          <button class="menu-toggle" id="menuToggle">☰</button>
       </div>
   </div>
 
@@ -29,72 +44,87 @@
       <a href="ai-tools.html">AI Tools</a>
       <a href="pricing.html">Pricing</a>
       <a href="donate.html">Donate</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <section class="page legal-page">
-    <h1 class="section-title">Disclaimer</h1>
-    <p class="section-subtitle">
-        Information and services provided by AI Market are offered “as is”.
-    </p>
+  <h1 class="section-title">Disclaimer</h1>
+  <p class="section-subtitle">
+      Information and services on this website are provided by AI Market on an “as is” and “as available” basis.
+  </p>
 
-    <h2>1. No Guaranteed Results</h2>
-    <p>
-        AI-generated content can be unpredictable. We do our best to deliver high quality, but we cannot
-        guarantee specific results such as increased followers, views or revenue.
-    </p>
+  <h2>1. No Professional Advice</h2>
+  <p>
+      Content on this website is for general information and marketing purposes only.
+      It should not be considered legal, financial or professional advice. You are responsible
+      for how you use any content we deliver.
+  </p>
 
-    <h2>2. Third-Party Platforms</h2>
-    <p>
-        You are responsible for ensuring that any content you post follows the rules of platforms like
-        YouTube, Instagram, Facebook, etc. AI Market is not responsible for account bans or penalties.
-    </p>
+  <h2>2. Third-Party Rights</h2>
+  <p>
+      When you provide material (songs, images, videos, logos, text), you confirm that you
+      have the necessary rights and permissions. AI Market is not responsible for copyright
+      or policy issues caused by content supplied by you.
+  </p>
 
-    <h2>3. External Links</h2>
-    <p>
-        Our site may contain links to third-party websites (e.g., Razorpay, messaging apps). We are not
-        responsible for their content or policies.
-    </p>
+  <h2>3. Platform Policies</h2>
+  <p>
+      Social media platforms (such as YouTube, Instagram, Facebook, etc.) have their own
+      rules and policies. We cannot guarantee approval, reach, monetization or non-removal
+      of your posts on those platforms.
+  </p>
+
+  <h2>4. Limitation</h2>
+  <p>
+      AI Market and its owner(s) will not be liable for any indirect, incidental or
+      consequential damages arising from the use of our services or this website.
+  </p>
+
+  <h2>5. Changes</h2>
+  <p>
+      This Disclaimer may be updated from time to time. Please review it periodically.
+  </p>
 </section>
 
+<a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20have%20a%20question%20about%20the%20Disclaimer."
+   class="whatsapp-float" target="_blank">💬</a>
+
 <footer>
-    © 2025 AI Market · World’s Smart AI Platform<br />
-    <a href="terms.html">Terms</a> ·
-    <a href="privacy.html">Privacy</a> ·
-    <a href="refund.html">Refund Policy</a> ·
-    <a href="disclaimer.html">Disclaimer</a> ·
-    <a href="cookies.html">Cookies</a>
+  © 2025 AI Market · World’s Smart AI Platform<br />
+  <a href="terms.html">Terms</a> ·
+  <a href="privacy.html">Privacy</a> ·
+  <a href="refund.html">Refund Policy</a> ·
+  <a href="disclaimer.html">Disclaimer</a> ·
+  <a href="cookies.html">Cookies</a>
 </footer>
 
 <script>
 (function () {
-    const body   = document.body;
-    const themeToggle = document.getElementById("themeToggle");
-    const menuToggle  = document.getElementById("menuToggle");
-    const nav         = document.getElementById("mainNav");
+  const body = document.body;
+  const themeToggle = document.getElementById("themeToggle");
+  const menuToggle  = document.getElementById("menuToggle");
+  const nav         = document.getElementById("mainNav");
 
-    const saved = localStorage.getItem("theme");
-    if (saved === "light") {
-        body.classList.add("light-theme");
-        if (themeToggle) themeToggle.textContent = "☀";
-    }
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+      body.classList.add("light-theme");
+      themeToggle.textContent = "☀";
+  }
 
-    if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-            body.classList.toggle("light-theme");
-            const light = body.classList.contains("light-theme");
-            themeToggle.textContent = light ? "☀" : "🌙";
-            localStorage.setItem("theme", light ? "light" : "dark");
-        });
-    }
+  themeToggle.addEventListener("click", () => {
+      body.classList.toggle("light-theme");
+      const light = body.classList.contains("light-theme");
+      themeToggle.textContent = light ? "☀" : "🌙";
+      localStorage.setItem("theme", light ? "light" : "dark");
+  });
 
-    if (menuToggle && nav) {
-        menuToggle.addEventListener("click", () => {
-            nav.classList.toggle("open");
-        });
-    }
+  menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+  });
 })();
 </script>
 </body>
