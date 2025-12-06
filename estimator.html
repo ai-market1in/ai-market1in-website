@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Price Estimator - AI Market</title>
-
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" />
 </head>
-
 <body>
 
 <header>
@@ -19,19 +17,23 @@
             <span class="tagline">World’s Smart AI Platform</span>
         </div>
     </div>
-
     <div class="header-right">
         <nav>
             <a href="index.html">Home</a>
             <a href="ai-tools.html">AI Tools</a>
+            <a href="ai-video-tools.html">Video Tools</a>
+            <a href="ai-image-tools.html">Image Tools</a>
+            <a href="ai-music-tools.html">Music Tools</a>
             <a href="pricing.html">Pricing</a>
+            <a class="active" href="estimator.html">Estimator</a>
             <a href="order.html">Order</a>
             <a href="donate.html">Donate</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="faq.html">FAQ</a>
         </nav>
-
         <div class="header-actions">
             <button class="theme-toggle" id="themeToggle">🌙</button>
         </div>
@@ -48,7 +50,6 @@
     <div class="card" style="max-width:650px;margin:22px auto;">
         <form id="estimatorForm">
 
-            <!-- Service Type -->
             <label for="serviceType">Service Type</label>
             <select id="serviceType" required
                 style="width:100%;margin:6px 0 14px;padding:10px;border-radius:8px;
@@ -64,7 +65,6 @@
                 <option value="vocal">Vocal Enhancement</option>
             </select>
 
-            <!-- Duration (for video-based services) -->
             <label for="duration">Video Length (if video)</label>
             <select id="duration"
                 style="width:100%;margin:6px 0 14px;padding:10px;border-radius:8px;
@@ -75,7 +75,6 @@
                 <option value="60">Up to 60 seconds</option>
             </select>
 
-            <!-- Extras -->
             <div style="margin:10px 0 14px;">
                 <label>Extras (optional)</label>
                 <div style="margin-top:8px;font-size:14px;">
@@ -94,13 +93,11 @@
                 </div>
             </div>
 
-            <!-- Notes -->
             <label for="notes">Notes (optional)</label>
             <textarea id="notes" rows="3" placeholder="Example: 30 sec business promo reel with logo and offer text."
                 style="width:100%;margin:6px 0 18px;padding:10px;border-radius:8px;
                        border:1px solid #334155;background:#0f172a;color:#e5e7eb;"></textarea>
 
-            <!-- Result -->
             <div id="estimateBox" style="
                 padding:14px;
                 border-radius:10px;
@@ -167,7 +164,6 @@
 
 // Estimator logic
 (function () {
-    const form = document.getElementById("estimatorForm");
     const calcBtn = document.getElementById("calcBtn");
     const amountEl = document.getElementById("estimateAmount");
     const noteEl = document.getElementById("estimateNote");
@@ -188,10 +184,9 @@
 
         let base = 0;
 
-        // Base prices by service
         switch (service) {
             case "reel":
-                base = 149; // starting
+                base = 149;
                 break;
             case "devotional":
                 base = 129;
@@ -216,14 +211,12 @@
                 break;
         }
 
-        // Duration adjustment (for video-type services)
         if (duration) {
             const d = parseInt(duration, 10);
             if (d === 30) base += 80;
             if (d === 60) base += 180;
         }
 
-        // Extras
         if (extraSub) base += 50;
         if (extraCartoon) base += 100;
         if (extraFast) base += 150;
@@ -237,6 +230,5 @@
     });
 })();
 </script>
-
 </body>
 </html>
