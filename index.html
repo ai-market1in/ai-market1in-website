@@ -7,10 +7,154 @@
 
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" />
+</head>
 
-    <!-- Google Analytics (Optional)
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag("
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="logo-wrap">
+            <img src="logo.png" class="logo" alt="AI Market Logo" />
+            <div class="logo-text">
+                <span class="site-name">AI Market</span>
+                <span class="tagline">World’s Smart AI Platform</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </div>
+
+    <nav id="mainNav">
+        <a class="active" href="index.html">Home</a>
+        <a href="ai-tools.html">AI Tools</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="donate.html">Donate</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to <span>AI Market</span></h1>
+        <p class="hero-subtitle">
+            Create Videos • Enhance Photos • Generate Music  
+            Powered by smart AI tools designed for everyone.
+        </p>
+
+        <a href="ai-tools.html" class="btn-primary hero-btn">Start Creating</a>
+
+        <a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20want%20AI%20Services."
+           class="btn-secondary hero-btn" target="_blank">
+           Message on WhatsApp
+        </a>
+    </div>
+</section>
+
+
+<!-- FEATURES SECTION -->
+<section class="page">
+    <h2 class="section-title">What You Can Do With AI Market</h2>
+
+    <div class="features-container">
+
+        <div class="card">
+            <h3>AI Video Tools</h3>
+            <p>Create Reels, Shorts, Devotional Videos, Cinematic Edits & more.</p>
+            <a href="ai-tools.html#videos" class="btn-secondary">Explore Videos</a>
+        </div>
+
+        <div class="card">
+            <h3>AI Image Tools</h3>
+            <p>Cartoon photos, Background removal, HD enhancement.</p>
+            <a href="ai-tools.html#images" class="btn-secondary">Explore Images</a>
+        </div>
+
+        <div class="card">
+            <h3>AI Music Tools</h3>
+            <p>BGM creator, Vocal enhancement, AI music generator.</p>
+            <a href="ai-tools.html#music" class="btn-secondary">Explore Music</a>
+        </div>
+
+        <div class="card">
+            <h3>Custom AI Projects</h3>
+            <p>Need something special or bulk orders? We support it.</p>
+            <a href="contact.html" class="btn-secondary">Contact Us</a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PORTFOLIO PREVIEW -->
+<section class="page">
+    <h2 class="section-title">Portfolio Highlights</h2>
+
+    <div class="portfolio-preview">
+        <div class="preview-card">AI Reel Video</div>
+        <div class="preview-card">AI Cartoon Photo</div>
+        <div class="preview-card">Cinematic AI BGM</div>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;">
+        <a href="portfolio.html" class="btn-primary">View Full Portfolio</a>
+    </div>
+</section>
+
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20want%20a%20service."
+   class="whatsapp-float"
+   target="_blank">💬</a>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2025 AI Market · World’s Smart AI Platform  
+    <br /><br />
+    <a href="terms.html">Terms</a> ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="refund.html">Refund Policy</a> ·
+    <a href="disclaimer.html">Disclaimer</a> ·
+    <a href="cookies.html">Cookies</a>
+</footer>
+
+
+<!-- JS FOR THEME + MOBILE MENU -->
+<script>
+(function () {
+    const body = document.body;
+    const menuToggle = document.getElementById("menuToggle");
+    const themeToggle = document.getElementById("themeToggle");
+    const nav = document.getElementById("mainNav");
+
+    // Dark/Light Theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+        body.classList.add("light-theme");
+        themeToggle.textContent = "☀";
+    }
+
+    themeToggle.addEventListener("click", () => {
+        body.classList.toggle("light-theme");
+        const isLight = body.classList.contains("light-theme");
+        themeToggle.textContent = isLight ? "☀" : "🌙";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+
+    // Mobile Menu
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("open");
+    });
+})();
+</script>
+
+</body>
+</html>
