@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Estimator - AI Market</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.png" />
+</head>
+
+<body>
+
+<header>
+    <div class="logo-wrap">
+        <img src="logo.png" class="logo" alt="AI Market logo" />
+        <div class="logo-text">
+            <span class="site-name">AI Market</span>
+            <span class="tagline">World’s Smart AI Platform</span>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="ai-tools.html">AI Tools</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="order.html">Order</a>
+            <a href="donate.html">Donate</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+    </div>
+</header>
+
+<section class="page">
+    <h1 class="section-title">AI Service Price Estimator</h1>
+    <p class="section-subtitle">
+        Get an approximate price for your AI video or content before you place an order.
+        Final cost may vary based on exact requirements.
+    </p>
+
+    <div class="card" style="max-width:650px;margin:22px auto;">
+        <form id="estimatorForm">
+
+            <!-- Service Type -->
+            <label for="serviceType">Service Type</label>
+            <select id="serviceType" required
+                style="width:100%;margin:6px 0 14px;padding:10px;border-radius:8px;
+                       border:1px solid #334155;background:#0f172a;color:#e5e7eb;">
+                <option value="">-- Select service --</option>
+                <option value="reel">Reel / Short Video</option>
+                <option value="devotional">Devotional / Status Video</option>
+                <option value="cartoonVideo">Cartoon Video</option>
+                <option value="cartoonPhoto">Cartoon Photo (single)</option>
+                <option value="portrait">Portrait Enhancement</option>
+                <option value="bgChange">Background Change</option>
+                <option value="bgm">AI BGM / Music Track</option>
+                <option value="vocal">Vocal Enhancement</option>
+            </select>
+
+            <!-- Duration (for video-based services) -->
+            <label for="duration">Video Length (if video)</label>
+            <select id="duration"
+                style="width:100%;margin:6px 0 14px;padding:10px;border-radius:8px;
+                       border:1px solid #334155;background:#0f172a;color:#e5e7eb;">
+                <option value="">Not a video / Not sure</option>
+                <option value="15">Up to 15 seconds</option>
+                <option value="30">Up to 30 seconds</option>
+                <option value="60">Up to 60 seconds</option>
+            </select>
+
+            <!-- Extras -->
+            <div style="margin:10px 0 14px;">
+                <label>Extras (optional)</label>
+                <div style="margin-top:8px;font-size:14px;">
+                    <label style="display:block;margin-bottom:6px;">
+                        <input type="checkbox" id="extraSubtitles" />
+                        Add subtitles / captions (+₹50)
+                    </label>
+                    <label style="display:block;margin-bottom:6px;">
+                        <input type="checkbox" id="extraCartoonStyle" />
+                        Cartoon / special style (+₹100)
+                    </label>
+                    <label style="display:block;margin-bottom:6px;">
+                        <input type="checkbox" id="extraFastDelivery" />
+                        Fast delivery (24 hours, if possible) (+₹150)
+                    </label>
+                </div>
+            </div>
+
+            <!-- Notes -->
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" rows="3" placeholder="Example: 30 sec business promo reel with logo and offer text."
+                style="width:100%;margin:6px 0 18px;padding:10px;border-radius:8px;
+                       border:1px solid #334155;background:#0f172a;color:#e5e7eb;"></textarea>
+
+            <!-- Result -->
+            <div id="estimateBox" style="
+                padding:14px;
+                border-radius:10px;
+                background:#020617;
+                border:1px solid #1e293b;
+                margin-bottom:14px;">
+                <div style="font-size:14px;opacity:0.85;">Estimated Price</div>
+                <div id="estimateAmount" style="font-size:28px;font-weight:700;margin-top:4px;">
+                    ₹0
+                </div>
+                <div id="estimateNote" style="font-size:12px;opacity:0.8;margin-top:4px;">
+                    Select options above to see an estimate.
+                </div>
+            </div>
+
+            <button type="button" id="calcBtn" class="btn-primary" style="width:100%;text-align:center;">
+                Calculate Estimate
+            </button>
+
+            <a id="orderBtn" href="order.html"
+               class="btn-secondary"
+               style="width:100%;text-align:center;display:inline-block;margin-top:10px;">
+                Go to Order Page
+            </a>
+        </form>
+    </div>
+
+    <p style="text-align:center;font-size:13px;opacity:0.8;margin-top:8px;">
+        This is only an approximate price. Final quote will be confirmed over WhatsApp based on your full requirements.
+    </p>
+</section>
+
+<a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20checked%20the%20price%20estimator%20and%20want%20to%20discuss%20a%20project."
+   class="whatsapp-float" target="_blank">💬</a>
+
+<footer>
+    © 2025 AI Market · World’s Smart AI Platform <br>
+    <a href="terms.html">Terms</a> ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="refund.html">Refund Policy</a> ·
+    <a href="disclaimer.html">Disclaimer</a> ·
+    <a href="cookies.html">Cookies</a> ·
+    <a href="faq.html">FAQ</a>
+</footer>
+
+<script>
+(function () {
+    const body = document.body;
+    const toggle = document.getElementById("themeToggle");
+
+    const saved = localStorage.getItem("theme");
+    if (saved === "light") {
+        body.classList.add("light-theme");
+        toggle.textContent = "☀";
+    }
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light-theme");
+        const light = body.classList.contains("light-theme");
+        toggle.textContent = light ? "☀" : "🌙";
+        localStorage.setItem("theme", light ? "light" : "dark");
+    });
+})();
+
+// Estimator logic
+(function () {
+    const form = document.getElementById("estimatorForm");
+    const calcBtn = document.getElementById("calcBtn");
+    const amountEl = document.getElementById("estimateAmount");
+    const noteEl = document.getElementById("estimateNote");
+
+    function calcPrice() {
+        const service = document.getElementById("serviceType").value;
+        const duration = document.getElementById("duration").value;
+
+        const extraSub = document.getElementById("extraSubtitles").checked;
+        const extraCartoon = document.getElementById("extraCartoonStyle").checked;
+        const extraFast = document.getElementById("extraFastDelivery").checked;
+
+        if (!service) {
+            amountEl.textContent = "₹0";
+            noteEl.textContent = "Please select a service type first.";
+            return;
+        }
+
+        let base = 0;
+
+        // Base prices by service
+        switch (service) {
+            case "reel":
+                base = 149; // starting
+                break;
+            case "devotional":
+                base = 129;
+                break;
+            case "cartoonVideo":
+                base = 199;
+                break;
+            case "cartoonPhoto":
+                base = 99;
+                break;
+            case "portrait":
+                base = 79;
+                break;
+            case "bgChange":
+                base = 79;
+                break;
+            case "bgm":
+                base = 149;
+                break;
+            case "vocal":
+                base = 99;
+                break;
+        }
+
+        // Duration adjustment (for video-type services)
+        if (duration) {
+            const d = parseInt(duration, 10);
+            if (d === 30) base += 80;
+            if (d === 60) base += 180;
+        }
+
+        // Extras
+        if (extraSub) base += 50;
+        if (extraCartoon) base += 100;
+        if (extraFast) base += 150;
+
+        amountEl.textContent = "₹" + base.toString();
+        noteEl.textContent = "Approximate price. Final quote will be confirmed over WhatsApp.";
+    }
+
+    calcBtn.addEventListener("click", function () {
+        calcPrice();
+    });
+})();
+</script>
+
+</body>
+</html>
