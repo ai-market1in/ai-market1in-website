@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Market - World's Smart AI Platform</title>
 
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-N4Z93Z4T');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" />
 </head>
 
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4Z93Z4T"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- HEADER -->
 <header>
@@ -135,7 +152,6 @@
     const themeToggle = document.getElementById("themeToggle");
     const nav = document.getElementById("mainNav");
 
-    // Dark/Light Theme
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "light") {
         body.classList.add("light-theme");
@@ -144,12 +160,11 @@
 
     themeToggle.addEventListener("click", () => {
         body.classList.toggle("light-theme");
-        const isLight = body.classList.contains("light-theme");
-        themeToggle.textContent = isLight ? "☀" : "🌙";
-        localStorage.setItem("theme", isLight ? "light" : "dark");
+        const light = body.classList.contains("light-theme");
+        themeToggle.textContent = light ? "☀" : "🌙";
+        localStorage.setItem("theme", light ? "light" : "dark");
     });
 
-    // Mobile Menu
     menuToggle.addEventListener("click", () => {
         nav.classList.toggle("open");
     });
