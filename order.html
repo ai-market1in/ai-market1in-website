@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Order AI Service - AI Market</title>
-
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.png" />
 </head>
-
 <body>
 
 <header>
@@ -24,9 +22,15 @@
       <nav>
           <a href="index.html">Home</a>
           <a href="ai-tools.html">AI Tools</a>
+          <a href="ai-video-tools.html">Video Tools</a>
+          <a href="ai-image-tools.html">Image Tools</a>
+          <a href="ai-music-tools.html">Music Tools</a>
           <a href="pricing.html">Pricing</a>
+          <a href="estimator.html">Estimator</a>
           <a class="active" href="order.html">Order</a>
           <a href="donate.html">Donate</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="faq.html">FAQ</a>
@@ -42,6 +46,8 @@
   <h1 class="section-title">Order AI Service</h1>
   <p class="section-subtitle">
     Fill this form and we’ll create a WhatsApp message for you automatically.
+    <br>
+    Prefer chat style? <a href="order-chat.html">Try Chat Order (Beta)</a>.
   </p>
 
   <div class="card" style="max-width:600px; margin:20px auto;">
@@ -90,7 +96,7 @@
               style="width:100%;margin:6px 0 14px;padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e5e7eb;">
 
           <label for="details">Project Details</label>
-          <textarea id="details" rows="4" placeholder="Example: I want a 30 sec video in English & Spanish with logo and name title."
+          <textarea id="details" rows="4" placeholder="Example: 30 sec video in English & Spanish with logo and name title."
               style="width:100%;margin:6px 0 18px;padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e5e7eb;"></textarea>
 
           <button type="submit" class="btn-primary" style="width:100%;text-align:center;">
@@ -153,12 +159,12 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
     }
 
     let msg = `New AI Order from AI Market website:%0A%0A`;
-    msg += `Name: ${name}%0A`;
-    msg += `Customer WhatsApp: ${phone}%0A`;
-    msg += `Service: ${service}%0A`;
-    if (duration) msg += `Length: ${duration}%0A`;
-    if (language) msg += `Language(s): ${language}%0A`;
-    if (budget) msg += `Budget: $${budget} (or equivalent)%0A`;
+    msg += `Name: ${encodeURIComponent(name)}%0A`;
+    msg += `Customer WhatsApp: ${encodeURIComponent(phone)}%0A`;
+    msg += `Service: ${encodeURIComponent(service)}%0A`;
+    if (duration) msg += `Length: ${encodeURIComponent(duration)}%0A`;
+    if (language) msg += `Language(s): ${encodeURIComponent(language)}%0A`;
+    if (budget) msg += `Budget: ₹${encodeURIComponent(budget)}%0A`;
     if (details) msg += `%0ADetails:%0A${encodeURIComponent(details)}%0A`;
 
     const ownerNumber = "919676142165";
