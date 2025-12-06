@@ -3,41 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refund Policy | AI Market</title>
+    <title>Refund Policy - AI Market</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
 </head>
+
 <body>
 
-<header class="header">
-    <a href="index.html" class="logo">AI Market</a>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="pricing.html">Pricing</a>
-        <a class="active" href="refund.html">Refund</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacy.html">Privacy</a>
-    </nav>
+<header>
+    <div class="logo-wrap">
+        <img src="logo.png" class="logo">
+        <div class="logo-text">
+            <span class="site-name">AI Market</span>
+            <span class="tagline">World’s Smart AI Platform</span>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="ai-tools.html">AI Tools</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="donate.html">Donate</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a class="active" href="refund.html">Refund</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
 </header>
 
-<section class="legal">
-    <h1>Refund & Cancellation Policy</h1>
-    <p>AI Market follows a transparent and fair refund policy.</p>
+<section class="page legal-page">
+    <h1 class="section-title">Refund Policy</h1>
 
-    <h2>1. Refund Eligibility</h2>
-    <p>Refunds can be issued only if the purchased service was not delivered due to a technical issue.</p>
+    <div class="card">
 
-    <h2>2. Non-refundable Services</    <p>All AI-based digital outputs are non-refundable once generated.</p>
+        <p>AI Market offers digital services which begin immediately after purchase. Therefore:</p>
 
-    <h2>3. Processing Time</h2>
-    <p>Refunds may take 5–7 business days to reflect in your account.</p>
+        <h2>1. No Refund After Work Begins</h2>
+        <p>Once we start processing your video/audio/image order, refunds are not possible.</p>
 
-    <h2>4. Contact for Refunds</h2>
-    <p>You can request support via WhatsApp or email listed on the website.</p>
+        <h2>2. Wrong Payment or Duplicate Payment</h2>
+        <p>If you paid twice or paid the wrong amount, contact us within 24 hours for correction.</p>
+
+        <h2>3. Service Not Delivered</h2>
+        <p>Rare case: If we fail to deliver your order within the promised time, a partial or full refund may be issued.</p>
+
+        <h2>4. Contact for Refund Help</h2>
+        <p>Email: support@aimarket.in<br>WhatsApp: 9676142165</p>
+
+    </div>
 </section>
 
+<a href="https://wa.me/919676142165" class="whatsapp-float" target="_blank">💬</a>
+
 <footer>
-    <p>© 2025 AI Market | <a href="refund.html">Refund Policy</a> | <a href="terms.html">Terms</a></p>
+    © 2025 AI Market · World’s Smart AI Platform <br>
+    <a href="terms.html">Terms</a> ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="refund.html">Refund</a> ·
+    <a href="disclaimer.html">Disclaimer</a> ·
+    <a href="cookies.html">Cookies</a>
 </footer>
+
+<script>
+(function(){
+    const body=document.body;
+    const t=document.getElementById("themeToggle");
+    const saved=localStorage.getItem("theme");
+    if(saved==="light"){body.classList.add("light-theme");t.textContent="☀";}
+    t.addEventListener("click",()=>{body.classList.toggle("light-theme");const L=body.classList.contains("light-theme");t.textContent=L?"☀":"🌙";localStorage.setItem("theme",L?"light":"dark");});
+})();
+</script>
 
 </body>
 </html>
