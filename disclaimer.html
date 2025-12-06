@@ -4,118 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Disclaimer - AI Market</title>
-
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" />
 </head>
-<body>
 
+<body>
 <header>
-    <div class="logo-wrap">
-        <img src="logo.png" class="logo" alt="AI Market logo" />
-        <div class="logo-text">
-            <span class="site-name">AI Market</span>
-            <span class="tagline">World’s Smart AI Platform</span>
-        </div>
-    </div>
-    <div class="header-right">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="ai-tools.html">AI Tools</a>
-            <a href="ai-video-tools.html">Video Tools</a>
-            <a href="ai-image-tools.html">Image Tools</a>
-            <a href="ai-music-tools.html">Music Tools</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="estimator.html">Estimator</a>
-            <a href="order.html">Order</a>
-            <a href="donate.html">Donate</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="blog.html">Blog</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="faq.html">FAQ</a>
-        </nav>
-        <div class="header-actions">
-            <button class="theme-toggle" id="themeToggle">🌙</button>
-        </div>
-    </div>
+  <div class="header-inner">
+      <div class="logo-wrap">
+          <img src="logo.png" class="logo" alt="AI Market logo" />
+          <div class="logo-text">
+              <span class="site-name">AI Market</span>
+              <span class="tagline">World’s Smart AI Platform</span>
+          </div>
+      </div>
+      <div class="header-right">
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      </div>
+  </div>
+
+  <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="ai-tools.html">AI Tools</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="donate.html">Donate</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<section class="page">
+<section class="page legal-page">
     <h1 class="section-title">Disclaimer</h1>
     <p class="section-subtitle">
-        Important notes about use of AI Market services and content.
+        Information and services provided by AI Market are offered “as is”.
     </p>
 
-    <div class="card" style="max-width:900px;margin:20px auto;line-height:1.7;font-size:14px;">
-        <h2>1. No Guaranteed Results</h2>
-        <p>
-            AI Market provides creative AI-assisted content. We do not guarantee any particular
-            number of views, followers, sales or other business outcomes from the content we create.
-        </p>
+    <h2>1. No Guaranteed Results</h2>
+    <p>
+        AI-generated content can be unpredictable. We do our best to deliver high quality, but we cannot
+        guarantee specific results such as increased followers, views or revenue.
+    </p>
 
-        <h2>2. Third-Party Platforms</h2>
-        <p>
-            When you upload content to platforms like Instagram, YouTube or others, you are
-            responsible for compliance with their terms and conditions. We are not responsible for
-            removals, copyright claims or account actions taken by those platforms.
-        </p>
+    <h2>2. Third-Party Platforms</h2>
+    <p>
+        You are responsible for ensuring that any content you post follows the rules of platforms like
+        YouTube, Instagram, Facebook, etc. AI Market is not responsible for account bans or penalties.
+    </p>
 
-        <h2>3. Copyright & Licenses</h2>
-        <p>
-            While we try to use AI-generated or properly licensed material, you are responsible for
-            ensuring you have rights to use any music, logos, images or other assets you provide.
-            If you share copyrighted material without permission, you accept the associated risk.
-        </p>
-
-        <h2>4. AI Limitations</h2>
-        <p>
-            AI-based systems can sometimes produce unexpected or imperfect outputs. We will
-            work with you to refine results within reasonable limits, but some level of variation
-            is normal in AI-generated content.
-        </p>
-
-        <h2>5. Information on This Website</h2>
-        <p>
-            Any advice, examples or information shared on this website or in our blog is for
-            general guidance only and should not be treated as professional, legal or financial advice.
-        </p>
-
-        <p style="font-size:12px;opacity:0.7;margin-top:12px;">
-            If you need legal clarity on copyright, contracts or regulations, please consult a
-            qualified professional in your region.
-        </p>
-    </div>
+    <h2>3. External Links</h2>
+    <p>
+        Our site may contain links to third-party websites (e.g., Razorpay, messaging apps). We are not
+        responsible for their content or policies.
+    </p>
 </section>
 
-<a href="https://wa.me/919676142165?text=Hi%20AI%20Market,%20I%20have%20a%20question%20about%20your%20Disclaimer."
-   class="whatsapp-float" target="_blank">💬</a>
-
 <footer>
-    © 2025 AI Market · World’s Smart AI Platform <br>
+    © 2025 AI Market · World’s Smart AI Platform<br />
     <a href="terms.html">Terms</a> ·
     <a href="privacy.html">Privacy</a> ·
     <a href="refund.html">Refund Policy</a> ·
     <a href="disclaimer.html">Disclaimer</a> ·
-    <a href="cookies.html">Cookies</a> ·
-    <a href="faq.html">FAQ</a>
+    <a href="cookies.html">Cookies</a>
 </footer>
 
 <script>
 (function () {
-    const body = document.body;
-    const toggle = document.getElementById("themeToggle");
+    const body   = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const menuToggle  = document.getElementById("menuToggle");
+    const nav         = document.getElementById("mainNav");
+
     const saved = localStorage.getItem("theme");
     if (saved === "light") {
         body.classList.add("light-theme");
-        toggle.textContent = "☀";
+        if (themeToggle) themeToggle.textContent = "☀";
     }
-    toggle.addEventListener("click", () => {
-        body.classList.toggle("light-theme");
-        const light = body.classList.contains("light-theme");
-        toggle.textContent = light ? "☀" : "🌙";
-        localStorage.setItem("theme", light ? "light" : "dark");
-    });
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            body.classList.toggle("light-theme");
+            const light = body.classList.contains("light-theme");
+            themeToggle.textContent = light ? "☀" : "🌙";
+            localStorage.setItem("theme", light ? "light" : "dark");
+        });
+    }
+
+    if (menuToggle && nav) {
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("open");
+        });
+    }
 })();
 </script>
 </body>
