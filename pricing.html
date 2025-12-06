@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pricing - AI Market</title>
-
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" />
 </head>
-
 <body>
 
 <header>
@@ -23,9 +21,15 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="ai-tools.html">AI Tools</a>
+            <a href="ai-video-tools.html">Video Tools</a>
+            <a href="ai-image-tools.html">Image Tools</a>
+            <a href="ai-music-tools.html">Music Tools</a>
             <a class="active" href="pricing.html">Pricing</a>
+            <a href="estimator.html">Estimator</a>
             <a href="order.html">Order</a>
             <a href="donate.html">Donate</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="faq.html">FAQ</a>
@@ -38,7 +42,6 @@
 
 <section class="page">
     <h1 class="section-title">Pricing Plans</h1>
-
     <p class="section-subtitle">
         Choose a plan that matches your content needs. All payments are securely processed via Razorpay.
         <br />
@@ -123,13 +126,11 @@
 (function () {
     const body = document.body;
     const toggle = document.getElementById("themeToggle");
-
     const saved = localStorage.getItem("theme");
     if (saved === "light") {
         body.classList.add("light-theme");
         toggle.textContent = "☀";
     }
-
     toggle.addEventListener("click", () => {
         body.classList.toggle("light-theme");
         const light = body.classList.contains("light-theme");
@@ -138,6 +139,5 @@
     });
 })();
 </script>
-
 </body>
 </html>
