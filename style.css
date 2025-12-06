@@ -170,6 +170,13 @@ nav a.active {
     margin-bottom: 24px;
 }
 
+.section-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 26px;
+    opacity: 0.85;
+}
+
 .features-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -210,7 +217,10 @@ nav a.active {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.tool-card, .price-card, .donate-card, .contact-box {
+.tool-card,
+.price-card,
+.donate-card,
+.contact-box {
     padding: 22px;
     border-radius: 14px;
     background: #111827;
@@ -220,7 +230,9 @@ nav a.active {
 }
 
 .tool-card:hover,
-.price-card:hover {
+.price-card:hover,
+.donate-card:hover,
+.contact-box:hover {
     transform: translateY(-4px);
     background: #1f2937;
 }
@@ -340,17 +352,24 @@ body.light-theme .hero {
     background: radial-gradient(circle at top, #dbeafe 0%, #f4f6ff 70%);
 }
 
+/* card-style components in light mode */
 body.light-theme .card,
 body.light-theme .tool-card,
-body.light-theme .price-card {
+body.light-theme .price-card,
+body.light-theme .donate-card,
+body.light-theme .contact-box {
     background: #ffffff;
     color: #111827;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme .card h3,
 body.light-theme .tool-card h3 {
     color: #1d4ed8;
+}
+
+body.light-theme .section-subtitle {
+    color: #4b5563;
 }
 
 body.light-theme footer {
